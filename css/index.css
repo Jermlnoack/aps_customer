@@ -10,6 +10,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 100;
 }
 
 main .main-intro h1 {
@@ -34,7 +35,7 @@ main a {
 main .main-quotes p {
   border-left: 4px solid var(--site-color-01);
   padding-left: 20px;
-  margin: 40px 0px;
+  margin: 40px 0;
 }
 
 main .main-quotes p:nth-child(2) {
@@ -51,4 +52,59 @@ main .main-quotes {
   position: relative;
   left: 4vh;
   padding-bottom: 8vh;
+}
+
+/* CATEGORY SECTION */
+
+.index-category {
+  width: 100%;
+  padding: 60px 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+  flex-wrap: wrap;
+}
+
+.index-category p {
+  color: #111;
+  text-align: center;
+  padding-bottom: 40px;
+  flex-basis: 100%;
+  text-transform: uppercase;
+  font-size: 22px;
+}
+
+.index-category-box {
+  width: 200px;
+  height: 200px;
+  background-color: #111;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.index-category-box:nth-child(2) {
+  background-image: url(../images/shell.jpeg);
+}
+
+.index-category-box:nth-child(3) {
+  background-image: url(../images/shell.jpeg);
+}
+
+.index-category-box:nth-child(4) {
+  background-image: url(../images/shell.jpeg);
+}
+
+.index-category-box:nth-child(5) {
+  background-image: url(../images/shell.jpeg);
+}
+
+.index-category-box h3 {
+  font-size: 22px;
+  line-height: 28px;
+  text-align: center;
+  text-shadow: -2px 2px 4px #000;
 }
