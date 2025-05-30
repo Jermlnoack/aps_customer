@@ -6,11 +6,12 @@ main {
   background-image: url(../images/portrait4.png), url(../images/bkg3.png);
   background-size: 70vh, cover;
   background-repeat: no-repeat;
-  background-position: bottom, center;
+  background-position: bottom left calc(50% + 80px), center;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 100;
+  column-gap: 220px;
 }
 
 main .main-intro h1 {
@@ -27,9 +28,15 @@ main a {
   margin-top: 30px;
   font-size: 18px;
   display: block;
+  height: 36px;
+  line-height: 36px;
   background-color: var(--site-color-01);
-  padding: 10px 20px;
+  padding: 0 10px;
   width: fit-content;
+}
+
+main a:hover {
+  background-color: var(--site-color-01-hover);
 }
 
 main .main-quotes p {
@@ -43,14 +50,10 @@ main .main-quotes p:nth-child(2) {
 }
 
 main .main-intro {
-  position: relative;
-  right: 20vh;
   padding-bottom: 8vh;
 }
 
 main .main-quotes {
-  position: relative;
-  left: 4vh;
   padding-bottom: 8vh;
 }
 
@@ -84,6 +87,7 @@ main .main-quotes {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .index-category-box:nth-child(2) {
@@ -102,9 +106,107 @@ main .main-quotes {
   background-image: url(../images/shell.jpeg);
 }
 
+.dark-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #1a253a;
+  opacity: 0.5;
+  transition: all ease-in-out 200ms;
+}
+
+.index-category-box:hover .dark-overlay {
+  opacity: 0;
+}
+
 .index-category-box h3 {
   font-size: 22px;
   line-height: 28px;
   text-align: center;
   text-shadow: -2px 2px 4px #000;
+  z-index: 100;
+}
+
+/* ABOUT */
+
+.index-about {
+  width: 100%;
+  padding: 60px 0;
+  background-color: #1a253a;
+}
+
+.index-about-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 60px;
+}
+
+.index-about-image img {
+  width: 300px;
+  height: 300px;
+  border-radius: 300px;
+}
+
+.index-about-text {
+  flex-basis: 455px;
+}
+
+.index-about-text p {
+  padding: 20px 0;
+}
+
+.index-about-text a {
+  font-size: 18px;
+  display: block;
+  height: 36px;
+  line-height: 36px;
+  background-color: var(--site-color-01);
+  padding: 0 10px;
+  width: fit-content;
+}
+
+.index-about-text a:hover {
+  background-color: var(--site-color-01-hover);
+}
+
+.index-about-skill {
+  flex-basis: 350px;
+}
+
+.index-about-skill-bar {
+  width: calc(100%-8px);
+  height: 20px;
+  border: 4px solid #0b0f16;
+}
+
+.index-about-skill-bar-fill {
+  height: 100%;
+  background-color: var(--site-color-01);
+}
+
+.SKILL1 {
+  width: 80%;
+}
+
+.SKILL2 {
+  width: 75%;
+}
+
+.SKILL3 {
+  width: 85%;
+}
+
+.SKILL4 {
+  width: 70%;
+}
+
+.SKILL5 {
+  width: 65%;
+}
+
+.SKILL6 {
+  width: 95%;
 }
