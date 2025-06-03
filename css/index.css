@@ -15,18 +15,19 @@ main {
 }
 
 main .main-intro h1 {
-  font-size: 96px;
-  line-height: 106px;
+  font-size: 9.6rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
 }
 
 main p {
-  font-size: 18px;
-  line-height: 30px;
+  font-size: 1.8rem;
+  line-height: 1.75;
 }
 
 main a {
   margin-top: 30px;
-  font-size: 18px;
+  font-size: 1.8rem;
   display: block;
   height: 36px;
   line-height: 36px;
@@ -75,12 +76,12 @@ main .main-quotes {
   padding-bottom: 40px;
   flex-basis: 100%;
   text-transform: uppercase;
-  font-size: 22px;
+  font-size: 2.2rem;
 }
 
 .index-category-box {
-  width: 200px;
-  height: 200px;
+  width: 20rem;
+  height: 20rem;
   background-color: #111;
   background-repeat: no-repeat;
   background-size: cover;
@@ -122,8 +123,8 @@ main .main-quotes {
 }
 
 .index-category-box h3 {
-  font-size: 22px;
-  line-height: 28px;
+  font-size: 2.2rem;
+  line-height: 1.5;
   text-align: center;
   text-shadow: -2px 2px 4px #000;
   z-index: 100;
@@ -159,7 +160,7 @@ main .main-quotes {
 }
 
 .index-about-text a {
-  font-size: 18px;
+  font-size: 1.8rem;
   display: block;
   height: 36px;
   line-height: 36px;
