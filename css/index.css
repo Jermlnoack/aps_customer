@@ -1,61 +1,98 @@
-main {
+/* HERO SECTION */
+
+.index-main {
+  position: relative;
+  text-align: center;
+  color: white;
+  height: 69vh; /* Full screen height (you can adjust this if needed) */
+  overflow: hidden;
+  --bg-image: url("../images/gasstation1.jpg"); /* Default background */
+}
+
+/* Dynamic zoomed background using a CSS variable */
+.index-main::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: calc(100vh - 60px);
-  background-color: #1a253a;
-  margin-top: 60px;
-  background-image: url(../images/portrait4.png), url(../images/bkg3.png);
-  background-size: 70vh, cover;
+  height: 100%;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  background-position: bottom left calc(50% + 80px), center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
-  column-gap: 220px;
+  z-index: 0;
+  animation: zoomEffect 20s ease-in-out infinite;
+  transition: background-image 1s ease-in-out;
+  filter: brightness(0.8);
 }
 
-main .main-intro h1 {
-  font-size: 9.6rem;
-  line-height: 1.1;
-  margin-bottom: 20px;
+/* Dark top gradient overlay */
+.index-main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+  z-index: 1;
+  pointer-events: none;
 }
 
-main p {
-  font-size: 1.8rem;
-  line-height: 1.75;
+/* Text content positioning */
+.main-intro,
+.index-main-link {
+  position: absolute;
+  z-index: 2;
 }
 
-main a {
-  margin-top: 30px;
-  font-size: 1.8rem;
-  display: block;
-  height: 36px;
-  line-height: 36px;
-  background-color: var(--site-color-01);
-  padding: 0 10px;
-  width: fit-content;
+.main-intro {
+  position: absolute; /* Keeps it absolute inside the index-main */
+  top: 20%; /* Move the text slightly higher, adjust this value */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: 100%; /* Full width */
+  text-align: center; /* Center the text */
 }
 
-main a:hover {
-  background-color: var(--site-color-01-hover);
+.main-intro h1 {
+  font-family: "Anton", sans-serif;
+  font-weight: 300;
+  font-size: 18rem; /* Larger font size */
+  color: rgba(6, 71, 137, 0.95);
+  margin: 0; /* Remove any margin */
+  white-space: nowrap; /* Ensure text stays on one line */
 }
 
-main .main-quotes p {
-  border-left: 4px solid var(--site-color-01);
-  padding-left: 20px;
-  margin: 40px 0;
+.index-main-link {
+  position: absolute;
+  top: 50%; /* Adjust top to place it in the middle */
+  transform: translateY(
+    -20%
+  ); /* Center the text vertically in the middle-right */
+  z-index: 3; /* Ensure it appears on top of "WE ARE" */
 }
 
-main .main-quotes p:nth-child(2) {
-  margin-left: 100px;
+/* Styling for the "The Best" text */
+.index-main-link h2 {
+  font-family: "Anton", sans-serif;
+  font-weight: 300;
+  font-size: 6rem; /* Adjust the font size */
+  color: #fff;
+  margin: 0;
+  white-space: nowrap;
 }
 
-main .main-intro {
-  padding-bottom: 8vh;
-}
-
-main .main-quotes {
-  padding-bottom: 8vh;
+/* Zoom animation */
+@keyframes zoomEffect {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
 }
 
 /* CATEGORY SECTION */
