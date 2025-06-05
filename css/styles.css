@@ -108,6 +108,10 @@ a {
   text-decoration: none; /* Remove underline from the Menu link */
 }
 
+.logo-menu:hover {
+  color: var(--site-color-01);
+}
+
 /* Right-side links container */
 .links {
   display: flex;
@@ -214,4 +218,34 @@ a {
 
 .footer-sitemap ul:nth-child(4) p {
   text-align: right;
+}
+
+/* Footer Bottom Bar */
+
+.footer-bottom {
+  width: 100%;
+  padding: 15px 30px; /* Adjusted padding to make the bar smaller */
+  background-color: #fff; /* Match footer background */
+  color: #fff;
+  display: flex;
+  justify-content: space-between; /* Space out content to the left and right */
+  align-items: center; /* Vertically center the items */
+}
+
+/* Targeting the <p> tag */
+.footer-bottom p {
+  margin: 0;
+  color: #999999; /* Darker gray color for text */
+  position: relative; /* Make it positionable */
+  top: 10px; /* Moves the text down slightly */
+  font-size: 1.1rem; /* Adjusted font size */
+}
+
+/* Targeting the Privacy Policy link */
+.footer-bottom .privacy-policy-link {
+  color: #666666; /* Darker gray color for text */
+  text-decoration: none;
+  position: relative; /* Make it positionable */
+  top: 10px; /* Moves the link down slightly */
+  font-size: 1.7rem; /* Adjusted font size */
 }
