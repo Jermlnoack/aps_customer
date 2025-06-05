@@ -1,15 +1,13 @@
 /* HERO SECTION */
-
 .index-main {
   position: relative;
   text-align: center;
   color: white;
-  height: 69vh; /* Full screen height (you can adjust this if needed) */
+  height: 69vh;
   overflow: hidden;
-  --bg-image: url("../images/gasstation1.jpg"); /* Default background */
+  --bg-image: url("../images/gasstation1.jpg");
 }
 
-/* Dynamic zoomed background using a CSS variable */
 .index-main::after {
   content: "";
   position: absolute;
@@ -27,7 +25,6 @@
   filter: brightness(0.8);
 }
 
-/* Dark top gradient overlay */
 .index-main::before {
   content: "";
   position: absolute;
@@ -40,7 +37,6 @@
   pointer-events: none;
 }
 
-/* Text content positioning */
 .main-intro,
 .index-main-link {
   position: absolute;
@@ -48,84 +44,77 @@
 }
 
 .main-intro {
-  position: absolute; /* Keeps it absolute inside the index-main */
-  top: 20%; /* Move the text slightly higher, adjust this value */
+  position: absolute;
+  top: 20%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
-  width: 100%; /* Full width */
-  text-align: center; /* Center the text */
+  width: 100%;
+  text-align: center;
 }
 
 .main-intro h1 {
   font-family: "Anton", sans-serif;
   font-weight: 300;
-  font-size: 18rem; /* Larger font size */
+  font-size: 18rem;
   color: rgba(6, 71, 137, 0.95);
-  margin: 0; /* Remove any margin */
-  white-space: nowrap; /* Ensure text stays on one line */
+  margin: 0;
+  white-space: nowrap;
 }
 
 .index-main-link {
   position: absolute;
-  top: 50%; /* Adjust top to place it in the middle */
-  transform: translateY(
-    -20%
-  ); /* Center the text vertically in the middle-right */
-  z-index: 3; /* Ensure it appears on top of "WE ARE" */
+  top: 50%;
+  transform: translateY(-20%);
+  z-index: 3;
 }
 
-/* Style for the text inside .index-main-link */
 .index-main-link h2 {
   font-family: "Anton", sans-serif;
   font-weight: 300;
   font-size: 6rem;
   color: var(--site-color-02);
   margin: 0;
-  white-space: normal; /* Allow text to wrap onto new lines */
+  white-space: normal;
   position: relative;
-  opacity: 0; /* Start the text as invisible */
-  transform: translateY(30px); /* Start below the normal position */
+  opacity: 0;
+  transform: translateY(30px);
   transition: transform 2s ease-out, opacity 2s ease-out;
-  max-width: 90%; /* Limit the width to ensure it wraps */
+  max-width: 90%;
   line-height: 1.2;
-  word-wrap: break-word; /* Allow words to break if needed */
-  text-align: left; /* Align text to the left */
-  padding-left: 20px; /* Add some space from the left side */
-  display: inline-block; /* Keep the text inline */
+  word-wrap: break-word;
+  text-align: left;
+  padding-left: 20px;
+  display: inline-block;
 }
 
-/* Style for the "EXPLORE OUR SERVICES" text */
 .index-main-link h3 {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  font-size: 2rem; /* Set the desired font size */
-  color: #fff; /* White text */
-  margin-top: 5px; /* Slight space from the h2 tag */
-  margin-left: 20px; /* Space between the h2 and h3 */
-  display: inline-block; /* Keep it inline with h2 */
-  vertical-align: middle; /* Align vertically with the h2 text */
+  font-size: 2rem;
+  color: #fff;
+  margin-top: 5px;
+  margin-left: 20px;
+  display: inline-block;
+  vertical-align: middle;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Slide Up Animation */
 @keyframes slideUp {
   0% {
-    transform: translateY(30px); /* Start below the normal position */
-    opacity: 0; /* Start invisible */
+    transform: translateY(30px);
+    opacity: 0;
   }
   100% {
-    transform: translateY(0); /* Slide to normal position */
-    opacity: 1; /* Fade in */
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
-/* Triggering the animation class */
 .index-main-link h2.animate-text {
   animation: slideUp 2s ease-out forwards;
 }
 
-/* Zoom animation */
 @keyframes zoomEffect {
   0% {
     transform: scale(1);
@@ -135,80 +124,57 @@
   }
 }
 
-/* CATEGORY SECTION */
-
-.index-category {
-  width: 100%;
-  padding: 60px 0;
-  background-color: #fff;
-  display: flex;
-  justify-content: center;
-  column-gap: 20px;
-  flex-wrap: wrap;
-}
-
-.index-category p {
-  color: #111;
-  text-align: center;
-  padding-bottom: 40px;
-  flex-basis: 100%;
-  text-transform: uppercase;
-  font-size: 2.2rem;
-}
-
-.index-category-box {
-  width: 20rem;
-  height: 20rem;
-  background-color: #111;
-  background-repeat: no-repeat;
-  background-size: cover;
+/* WE-ARE SECTION */
+.we-are {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-}
-
-.index-category-box:nth-child(2) {
-  background-image: url(../images/shell.jpeg);
-}
-
-.index-category-box:nth-child(3) {
-  background-image: url(../images/shell.jpeg);
-}
-
-.index-category-box:nth-child(4) {
-  background-image: url(../images/shell.jpeg);
-}
-
-.index-category-box:nth-child(5) {
-  background-image: url(../images/shell.jpeg);
-}
-
-.dark-overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #1a253a;
-  opacity: 0.5;
-  transition: all ease-in-out 200ms;
-}
-
-.index-category-box:hover .dark-overlay {
-  opacity: 0;
-}
-
-.index-category-box h3 {
-  font-size: 2.2rem;
-  line-height: 1.5;
+  height: 60vh;
+  background-image: url("../images/black.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
   text-align: center;
-  text-shadow: -2px 2px 4px #000;
-  z-index: 100;
+}
+
+.we-are-content h2 {
+  font-size: 2.5em;
+  margin-right: auto;
+}
+
+.we-are-content h1 {
+  font-size: 3.5em;
+  margin-left: auto;
+}
+
+/* SERVICE SECTION */
+.service-partner {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100vh;
+  background-image: url("../images/gasstation1.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 0 20px;
+  color: white;
+}
+
+.service-content {
+  text-align: right;
+  max-width: 500px;
+}
+
+.service-content h1 {
+  font-size: 3em;
+  margin-bottom: 15px;
+}
+
+.service-content p {
+  font-size: 1.2em;
 }
 
 /* ABOUT */
-
 .index-about {
   width: 100%;
   padding: 60px 0;
